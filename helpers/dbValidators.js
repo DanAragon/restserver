@@ -9,15 +9,13 @@ const esRoleValido = async(role = '') => {
 }
 
 const emailExiste = async(correo = '') => {
-    console.log("correo:",correo);
     const existecorreo = await Usuario.findOne({ correo });
-    console.log("existecorreo:",existecorreo);
     if (existecorreo) {
         throw new Error(`El ${correo} ya esta registrado en la base de datos`);
     }
 }
 
-const existeUsuarioPorId = async (id = '') => {
+const existeUsuarioPorId = async(id = '') => {
     const existeUsuario = await Usuario.findById(id);
     if (!existeUsuario) {
         throw new Error(`El id ${id} no existe `);
