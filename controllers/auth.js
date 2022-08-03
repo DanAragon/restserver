@@ -25,6 +25,8 @@ const login = async(req, res = response) => {
         }
 
         //verificar contraseña
+      
+        
         const validPass = bcryptjs.compareSync(pass, usuario.pass);
         if(!validPass){
             return res.status(400).json({
