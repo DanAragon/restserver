@@ -26,7 +26,7 @@
         function handleCredentialResponse(response) {
             // Google id token
 
-            var url = (window.location.hostname.includes('localhost')) ? 'http://localhost:8080/' : 'https://cursonode-aragon.herokuapp.com/';
+            var url = (window.location.hostname.includes('localhost')) ? 'http://localhost:8080/api/auth/google' : 'https://cursonode-aragon.herokuapp.com/api/auth/google';
 
             const body = {
                 id_token: response.credential
