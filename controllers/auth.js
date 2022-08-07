@@ -55,14 +55,14 @@ const login = async(req, res = response) => {
 const googleSignIn = async(req, res = response) => {
     const { id_token } = req.body;
     try {
-
+        
 
         const { correo, nombre, img } = await googleVerify(id_token);
 
         //Generar referencia en la base de datos
 
         let usuario = await Usuario.findOne({ correo });
-
+      
         if (!usuario) {
             //Crear el usuario cuando no existe
             const data = {
@@ -88,6 +88,11 @@ const googleSignIn = async(req, res = response) => {
         }
 
         const token = await generarJWT(usuario.id);
+
+      
+        
+      
+
 
         res.json({
             usuario,
