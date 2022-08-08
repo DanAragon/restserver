@@ -20,7 +20,7 @@ router.get('/:id',[
   check('id','No es un id de mongo valido').isMongoId(),
   check('id').custom(existeCategoria),
   validarCampos
- 
+
 ],GetCategoriaId);
 
 //Crear uno
