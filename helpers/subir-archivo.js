@@ -8,6 +8,8 @@ const subirArchivo = (files,extensionesValidas =['png','jpeg','jpg','gif'], carp
         const nombreCortado = archivo.name.split('.');
         const extension = nombreCortado[nombreCortado.length-1];
 
+        console.log("extension",extension);
+
         //Validar la extension
         if(!extensionesValidas.includes(extension)){
              reject(`la extension .${extension} no esta permitida - ${extensionesValidas}`);
